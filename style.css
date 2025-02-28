@@ -314,6 +314,7 @@ a {
 .review-section{
     background-color: #FAF5EF;
     padding: 50px 0 100px;
+    z-index:-1;
 }
 .review-section-title{
     text-align: center;
