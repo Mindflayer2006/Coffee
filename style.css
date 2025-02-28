@@ -1,0 +1,679 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* =============== NAVBAR =============== */
+header {
+    font-family: "Poppins", sans-serif;
+    background-color: #4B382A;
+}
+
+header .navbar {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    user-select: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section-title{
+    text-align: center;
+    padding: 30px 0 20px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: "Nunito", sans-serif; 
+}
+.section-title::after{
+    width: 50%;
+    height: 5px;
+    content: "";
+    display: block;
+    background-color: #f5a82c;
+    margin: 10px auto 0;
+    border-radius: 5px ;
+}
+
+.navbar .nav-logo .logo-text {
+    color: #FAF5EF;
+    padding-left: 1.5rem;
+}
+
+.navbar .nav-menu {
+    display: flex;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.navbar .nav-menu .nav-link {
+    color: #FAF5EF;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.navbar :where(#menu-close,#menu-open){
+    display: none;
+}
+.navbar .nav-menu .nav-link:hover {
+    background-color: #C9A56D;
+    color: #1E1E1E;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #4B382A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 8%;
+    min-height: 100vh;
+}
+
+/* --- Left Content (Text & Buttons) --- */
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 3rem;
+    color: #C9A56D;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* --- Improved Paragraph Styling --- */
+.hero-quote {
+    color: #FAF5EF;
+    font-family: "Nunito", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s ease-out forwards 0.8s;
+}
+
+.button {
+    min-width: 140px;
+    padding: 10px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Primary Button */
+.order-now {
+    background-color: #C9A56D;
+    color: black;
+    font-weight: bold;
+}
+
+.order-now:hover {
+    background-color: #B38E5D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Secondary Button */
+.contact-us {
+    background-color: transparent;
+    color: #C9A56D;
+    border: 2px solid #C9A56D;
+}
+
+.contact-us:hover {
+    background-color: #C9A56D;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.order-now:active{
+    transform: scale(0.95);
+}
+.contact-us:active{
+    transform: scale(0.95);
+}
+/* --- Right Image --- */
+.hero-img-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-img-wrapper img {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    opacity: 0;
+    transform: scale(1.1);
+    animation: zoomIn 1.5s ease-out forwards 0.5s;
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*About Section */
+.about-section{
+    background-color: #FAF5EF;
+    padding: 120px;
+}
+.about-section .section-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-section .about-img-wrapper .about-image{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.about-section .about-details{
+    max-width: 50%;
+}
+
+.about-section .about-details .about-text{
+    line-height: 30px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Nunito", sans-serif;
+}
+
+.about-section .social-link-list{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+.about-section .social-link-list .social-link{
+    color: #4B382A;
+    font-size: 1.2rem;
+    transition: 0.2s ease;
+}
+.about-section .social-link-list .social-link:hover{
+    color: #705440;
+    transform: scale(1.05);
+}
+/*Menu Section*/
+.menu-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between items */
+    justify-items: center; /* Center content */
+    padding: 20px;
+}
+.menu-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    padding: 0;
+}
+.menu-item {
+    background-color: #1E1E1E; /* Light cream */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}  
+.menu-image {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.name {
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FAF5EF; /* Espresso brown */
+    margin-top: 10px;
+}
+  
+.price {
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #C9A56D; /* Velvet Gold */
+    margin-top: 5px;
+}
+.menu-item:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+}
+.menu-item:hover .menu-image {
+    transform: scale(1.05); /* Slight zoom */
+    
+}
+  
+.menu-item:hover .name, 
+.menu-item:hover .price {
+    color: #c9a56d; /* Velvet Gold */
+    transition: color 0.3s ease-in-out;
+}
+
+/*Reviews*/
+.review-section{
+    background-color: #FAF5EF;
+    padding: 50px 0 100px;
+}
+.review-section-title{
+    text-align: center;
+    padding: 30px 0 20px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: "Nunito", sans-serif; 
+}
+.review-section-title::after{
+    width: 30%;
+    height: 5px;
+    content: "";
+    display: block;
+    background-color: #f5a82c;
+    margin: 10px auto 0;
+    border-radius: 5px ;
+}
+.review-section .review-slider .review-image{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 50px;
+    
+}
+.review-section .review-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    text-align: center;
+    font-family: "Nunito",sans-serif;
+}
+.review-section .review-item .review-username{
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: "Nunito",sans-serif;
+}
+.review-section .review-item .review-stars{
+    margin-bottom: 0.5rem;
+}
+.review-section .review-item .review-text{
+    line-height: 25px;
+}
+.review-section .slider-wrapper{
+    overflow: hidden;
+    margin: 0 60px 50px;
+}
+.review-section .swiper-pagination-bullet{
+    width: 1rem;
+    height: 1rem;
+    opacity: 1;
+    background-color: #f5a82ccb;
+}
+
+.review-section .swiper-pagination-bullet:active{
+    width: 1rem;
+    height: 1rem;
+    opacity: 1;
+    background-color: #f5a82c;
+}
+.review-section .swiper-slide-button{
+    transform: scale(0.5);
+    margin-top: -50px;
+    color: #f5a82c;
+    transition: 0.4s ease;
+}
+.review-section .swiper-slide-button:hover{
+    color: #B38E5D;
+}
+/*Contact Section*/
+.contact-section {
+    background-color: #f7ece0;
+    padding: 1rem;
+}
+
+.contact-section-title {
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: "Nunito", sans-serif;
+    color: #4B382A;
+}
+
+.contact-section-title::after {
+    width: 15%;
+    height: 5px;
+    content: "";
+    display: block;
+    background-color: #f5a82c;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.contact-section-content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Nunito", sans-serif;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    width: 45%;
+    background: #4B382A;
+    color: #FAF5EF;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #C9A56D;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #FAF5EF;
+}
+
+/* Contact Form Styling */
+.contact-form-container {
+    width: 50%;
+    background: #D6BDA8;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "Nunito", sans-serif;
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.contact-form button {
+    width: 60%;
+    padding: 5px;
+    background:#B38E5D;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #1E1E1E;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #FAF5EF;
+    color: #4B382A;
+}
+.contact-form button:active{
+    transform: scale(0.95);
+    background:#B38E5D;
+}
+.footer-section {
+    background-color: #1E1E1E;
+    color: #FAF5EF;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    font-family: "Nunito", sans-serif;
+}
+
+@media(max-width:768px){
+    .hero-section{
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-img-wrapper img {
+        width: 80%;
+    }
+    .button{
+        width: 60%;
+    }
+    body.show-mobile-menu header::before{
+        content: "";
+        position: fixed;
+        left: 0;
+        top:0;
+        z-index: 1000;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(3px);
+        background: rgba(0, 0, 0, 0.2);
+    }
+    .navbar .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px ;
+        position: fixed;
+        left: -300px;
+        top: 0;
+        z-index: 1000;
+        width: 300px;
+        height: 100%;
+        background-color: #FAF5EF;
+        transition: left 0.3s;
+    }
+    body.show-mobile-menu .navbar .nav-menu{
+        left: 0px;
+    }
+    .navbar .nav-menu .nav-link {
+        color: #1E1E1E;
+        display: block;
+        text-align: center;
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+    }
+    .navbar :where(#menu-close,#menu-open){
+        display: block;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+    .navbar #menu-close{
+        position:absolute;
+        right: 30px;
+        top: 30px;
+    }
+    .navbar #menu-open{
+        color: #FAF5EF;
+    }
+    .about-section .section-content{
+    flex-direction: column;
+    gap: 70px;
+    }
+    .about-section .about-img-wrapper .about-image{
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    }
+    .about-section .about-details{
+        max-width: 100%;
+    }
+    .menu-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+        gap: 20px; /* Space between items */
+        justify-items: center; /* Center content */
+        padding: 20px;
+    }
+    .menu-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(1,1fr); /* 3 columns */
+        gap: 20px;
+        padding: 0;
+    }
+    .about-section .about-details .about-text{
+        line-height: 20px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 300;
+        font-family: "Nunito", sans-serif;
+    }
+    .review-section .slider-wrapper{
+        margin: 0 0 30px;
+    }
+    .review-section .swiper-slide-button{
+        display: none;
+    }
+    .contact-section {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-section-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    /* Contact Info Styling */
+    .contact-info {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+    
+    .social-links a {
+        font-size: 1.2rem;
+    }
+    
+    /* Contact Form Styling */
+    .contact-form-container {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-form textarea {
+        height: 100px;
+    }
+    
+    .contact-form button {
+        padding: 5px;
+        font-size: 1rem;
+    }
+    .contact-form button:active{
+        transform: scale(0.95);
+        background:#B38E5D;
+    }
+}
